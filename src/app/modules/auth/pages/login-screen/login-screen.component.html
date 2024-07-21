@@ -1,1 +1,37 @@
-<p>login-screen works!</p>
+<div class="login-card">
+  <div class="card-header">
+    <div class="log">Login</div>
+  </div>
+
+  <form [formGroup]="formGroup" (ngSubmit)="login()">
+
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input
+        placeholder="tucorreo@gmail.com"
+        name="username"
+        formControlName="email"
+        id="username"
+        type="text"
+        (input)="clearErrorMessage()">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        formControlName="password"
+        name="password"
+        id="password"
+        type="password"
+        (input)="clearErrorMessage()">
+    </div>
+
+    <div class="error-message text-center font-bold">{{ errorMessage }}</div>
+
+    <div class="form-group">
+      <input value="Login" type="submit">
+    </div>
+
+  </form>
+
+</div>
